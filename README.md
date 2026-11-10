@@ -1,14 +1,29 @@
 # data-analytics-coderhouse
 
+# RetailPro
 
-Entregable: m5_consultas_joins.sql, con cuatro consultas sobre la base Ventas_Tech_DB del Módulo 3.
+Proyecto de análisis de datos de una distribuidora de tecnología. Su pregunta
+de negocio es: las ventas de productos importados cayeron frente al año
+anterior, ¿cómo se comportaron los nacionales y en qué territorios es mayor
+la brecha?
 
-Cómo actualicé el esquema del Módulo 3
+El repositorio contiene el modelo relacional (Ventas_Tech_DB), las consultas
+SQL y el boceto del dashboard. Usa un conjunto de datos de prueba pequeño,
+no datos reales de producción.
 
-Para tener dimensiones de agrupación y filtrado, y datos que permitan probar los LEFT JOIN, amplié el modelo original (categorias, clientes, productos, ventas) con estos cambios:
+## Herramientas
+- SQL Server y SSMS (T-SQL)
+- Power BI (dashboard, en etapa de diseño)
+- Git y GitHub
 
-Nueva tabla territorios (id_territorio, region) con Norte, Sur, Este y Oeste. Se relaciona con ventas mediante id_territorio (FOREIGN KEY), porque el territorio describe dónde ocurrió cada venta.
-productos.origen: columna obligatoria (Nacional / Importado), controlada con un CHECK.
-ventas.canal: columna obligatoria (Online / Presencial), controlada con un CHECK.
-productos.id_categoria: pasó a NOT NULL, para que todo producto tenga categoría.
-Datos de ejemplo nuevos: 2 clientes y 4 productos sin ventas (para las consultas 2 y 3).
+## Modelo de datos
+Tablas: clientes, productos, categorias, ventas y territorios.
+Columnas clave: productos.origen (Nacional/Importado) y ventas.canal
+(Online/Presencial).
+
+## Cómo ejecutar los scripts
+1. Abrí SSMS y conectate a tu instancia de SQL Server.
+2. Ejecutá el script de creación de Ventas_Tech_DB [nombre real del archivo].
+3. Ejecutá el script de ampliación con territorios, origen y canal
+   [nombre real del archivo].
+4. Ejecutá `m5_consultas_joins.sql` para las consultas de JOIN y UNION ALL.
