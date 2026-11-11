@@ -27,3 +27,5 @@ Columnas clave: productos.origen (Nacional/Importado) y ventas.canal
 3. Ejecutá el script de ampliación con territorios, origen y canal
    [nombre real del archivo].
 4. Ejecutá `m5_consultas_joins.sql` para las consultas de JOIN y UNION ALL.
+
+## IA utilizada en Entregable 9: Claude
